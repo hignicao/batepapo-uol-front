@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bate Papo UOL</title>
+
+		<link rel="stylesheet" href="src/css/reset.css" />
+		<link rel="stylesheet" href="src/css/style.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<header>
+			<div class="header-container">
+				<img src="src/images/logo.svg" alt="logo bate-papo UOL" />
+				<ion-icon onclick="activateMenu()" name="people"></ion-icon>
+			</div>
+		</header>
+
+		<main>
+			<div class="messages">
+				<div class="message">
+					<p class="time">(09:21:45)</p>
+					<p class="username">João</p>
+					<p class="message-content">entra na sala...</p>
+				</div>
+				<div class="message">
+					<p class="time">(09:21:45)</p>
+					<p class="username">João</p>
+					<p class="message-content">entra na sala...</p>
+				</div>
+				<div class="message">
+					<p class="time">(09:21:45)</p>
+					<p class="username">João</p>
+					<p class="message-content">entra na sala...</p>
+				</div>
+				<div class="message">
+					<p class="time">(09:21:45)</p>
+					<p class="username">João</p>
+					<p class="message-content">entra na sala...</p>
+				</div>
+				<div class="message">
+					<p class="time">(09:21:45)</p>
+					<p class="username">João</p>
+					<p class="message-content">entra na sala...</p>
+				</div>
+			</div>
+
+			<div class="menu">
+        <div onclick="activateMenu()" class="menu-background"></div>
+				<div class="menu-container">
+          <p class="title-menu">Escolha um contato para enviar mensagem:</p>
+					<div class="choose-contact">
+						<div class="contacts">
+							<ion-icon name="people-circle"></ion-icon>
+							<p>Todos</p>
+              <ion-icon class="check" name="checkmark-outline"></ion-icon>
+						</div>
+						<div class="contacts">
+							<ion-icon name="person-circle"></ion-icon>
+							<p>João</p>
+              <ion-icon class="check" name="checkmark-outline"></ion-icon>
+						</div>
+					</div>
+          <p class="title-menu">Escolha a visibilidade:</p>
+					<div class="choose-visibility">
+						<div class="visibility public">
+							<ion-icon name="lock-open"></ion-icon>
+							<p>Público</p>
+              <ion-icon class="check" name="checkmark-outline"></ion-icon>
+						</div>
+						<div class="visibility private">
+							<ion-icon name="lock-closed"></ion-icon>
+							<p>Reservadamente</p>
+              <ion-icon class="check" name="checkmark-outline"></ion-icon>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<div class="footer-container">
+				<input type="text" placeholder="Escreva aqui..." />
+				<ion-icon name="paper-plane-outline"></ion-icon>
+			</div>
+		</footer>
+
+		<script src="src/js/script.js"></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>

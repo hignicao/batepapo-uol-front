@@ -1,0 +1,103 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #E5E5E5;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+header .header-container {
+  height: 100%;
+  padding: 0px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container ion-icon {
+  font-size: 45px;
+}
+
+main {
+  margin: 106px 0px;
+}
+
+main .menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.menu .menu-background {
+  width: calc(100vw - 259px);
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.menu .menu-container {
+  width: 259px;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+.menu-container .title-menu {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0px;
+  background-color: white;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+}
+
+footer .footer-container {
+  height: 100%;
+  padding: 0 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-container input {
+  border: none;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.footer-container input::placeholder {
+  color: black;
+}
+
+.footer-container ion-icon {
+  font-size: 28px;
+}
+
+.hidden {
+  display: none;
+}
