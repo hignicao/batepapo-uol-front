@@ -22,61 +22,46 @@
 		</header>
 
 		<main>
-			<div class="messages">
-				<div class="message">
-					<p class="time">(09:21:45)</p>
-					<p class="username">João</p>
-					<p class="message-content">entra na sala...</p>
-				</div>
-				<div class="message">
-					<p class="time">(09:21:45)</p>
-					<p class="username">João</p>
-					<p class="message-content">entra na sala...</p>
-				</div>
-				<div class="message">
-					<p class="time">(09:21:45)</p>
-					<p class="username">João</p>
-					<p class="message-content">entra na sala...</p>
-				</div>
-				<div class="message">
-					<p class="time">(09:21:45)</p>
-					<p class="username">João</p>
-					<p class="message-content">entra na sala...</p>
-				</div>
-				<div class="message">
-					<p class="time">(09:21:45)</p>
-					<p class="username">João</p>
-					<p class="message-content">entra na sala...</p>
+			<div class="login-screen">
+				<div class="login-container">
+					<img src="src/images/logo.svg" alt="logo bate-papo UOL" />
+					<div class="name-enter">
+						<input id="my-username" type="text" placeholder="Digite seu nome" />
+						<button onclick="addUserName()">Entrar</button>
+					</div>
+					<div class="name-enter-loading hidden">
+						<div class="lds-ripple"><div></div><div></div></div>
+						<p>Entrando...</p>
+					</div>
 				</div>
 			</div>
 
-			<div class="menu">
-        <div onclick="activateMenu()" class="menu-background"></div>
+			<ul class="messages">
+				
+			</ul>
+
+			<div class="menu hidden">
+				<div onclick="activateMenu()" class="menu-background"></div>
 				<div class="menu-container">
-          <p class="title-menu">Escolha um contato para enviar mensagem:</p>
+					<p class="title-menu">Escolha um contato para enviar mensagem:</p>
 					<div class="choose-contact">
-						<div class="contacts">
-							<ion-icon name="people-circle"></ion-icon>
-							<p>Todos</p>
-              <ion-icon class="check" name="checkmark-outline"></ion-icon>
-						</div>
-						<div class="contacts">
-							<ion-icon name="person-circle"></ion-icon>
-							<p>João</p>
-              <ion-icon class="check" name="checkmark-outline"></ion-icon>
-						</div>
+						
 					</div>
-          <p class="title-menu">Escolha a visibilidade:</p>
+					<p class="title-menu">Escolha a visibilidade:</p>
 					<div class="choose-visibility">
 						<div class="visibility public">
-							<ion-icon name="lock-open"></ion-icon>
-							<p>Público</p>
-              <ion-icon class="check" name="checkmark-outline"></ion-icon>
+							<div class="ion-icon-p">
+								<ion-icon name="lock-open"></ion-icon>
+								<p>Público</p>
+							</div>
+							<ion-icon class="check" name="checkmark-outline"></ion-icon>
 						</div>
 						<div class="visibility private">
-							<ion-icon name="lock-closed"></ion-icon>
-							<p>Reservadamente</p>
-              <ion-icon class="check" name="checkmark-outline"></ion-icon>
+							<div class="ion-icon-p">
+								<ion-icon name="lock-closed"></ion-icon>
+								<p>Reservadamente</p>
+							</div>
+							<ion-icon class="check hidden" name="checkmark-outline"></ion-icon>
 						</div>
 					</div>
 				</div>
@@ -85,11 +70,15 @@
 
 		<footer>
 			<div class="footer-container">
-				<input type="text" placeholder="Escreva aqui..." />
-				<ion-icon name="paper-plane-outline"></ion-icon>
+				<div class="input-description">
+					<textarea id="my-message" style="overflow:hidden; white-space: pre-wrap; word-break: break-word;" placeholder="Escreva aqui..."></textarea>
+					<p class="private-text hidden">Enviando para Maria (reservadamente)</p>
+				</div>
+				<ion-icon id="myBtn" onclick="sendMessage()" name="paper-plane-outline"></ion-icon>
 			</div>
 		</footer>
 
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script src="src/js/script.js"></script>
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

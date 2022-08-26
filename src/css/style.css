@@ -1,7 +1,10 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background: #E5E5E5;
+  background: #F3F3F3
+  ;
 }
+
+/* -------------------------- HEADER -------------------------- */
 
 header {
   width: 100%;
@@ -25,9 +28,124 @@ header .header-container {
   font-size: 45px;
 }
 
+/* -------------------------- MAIN -------------------------- */
+
 main {
   margin: 106px 0px;
 }
+
+main .login-screen {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+/* -------------------------- LOGIN SCREEN -------------------------- */
+
+.login-screen .login-container {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 94px;
+}
+
+.login-container img {
+  width: 130px;
+}
+
+.login-container .name-enter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-container .name-enter-loading {
+  text-align: center;
+}
+
+.login-container .name-enter-loading p {
+  font-weight: 600;
+  font-style: italic;
+  color: #696969;
+}
+
+.name-enter input {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  width: 260px;
+  height: 54px;
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
+  outline: none;
+}
+
+.name-enter input::placeholder {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #AEAEAE;
+}
+
+.name-enter button {
+  color: #696969;
+  width: 109px;
+  height: 45px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  background: #E7E7E7;
+  border-radius: 9px;
+}
+
+/* -------------------------- MESSAGES -------------------------- */
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.messages .message {
+  padding: 12px 8px;
+  min-height: 40px;
+  background-color: #FFFFFF;
+}
+
+.message span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.41px;
+}
+
+.message .message-time {
+  color: #AAAAAA;
+}
+
+.message .message-from {
+  font-weight: 700;
+}
+
+.message .message-to {
+  font-weight: 700;
+}
+
+.messages .status {
+  background-color: #DCDCDC;
+}
+
+.messages .private {
+  background-color: #FFDEDE;
+}
+
+/* -------------------------- MENU -------------------------- */
 
 main .menu {
   width: 100%;
@@ -53,7 +171,7 @@ main .menu {
   background-color: white;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
   padding: 20px;
 }
 
@@ -63,6 +181,35 @@ main .menu {
   font-size: 16px;
   line-height: 19px;
 }
+
+.ion-icon-p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ion-icon-p ion-icon {
+  font-size: 26px;
+}
+
+.ion-icon-p p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.contacts, .visibility {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.menu-container .check {
+  color: #28BB25;
+}
+
+/* -------------------------- FOOTER -------------------------- */
 
 footer {
   width: 100%;
@@ -78,19 +225,28 @@ footer .footer-container {
   height: 100%;
   padding: 0 22px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 22px;
 }
 
-.footer-container input {
+.footer-container .input-description {
+  flex: 1;
+}
+
+.footer-container textarea{
+  font-family: 'Roboto', sans-serif;
+  height: 26px;
+  width: 100%;
   border: none;
   font-style: italic;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
+  outline: none;
+  resize: none;
 }
 
-.footer-container input::placeholder {
+.footer-container textarea::placeholder {
   color: black;
 }
 
@@ -98,6 +254,63 @@ footer .footer-container {
   font-size: 28px;
 }
 
+.footer-container p {
+  margin-left: 2px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 25px;
+}
+
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+
+/* -------------------------- CSS ANIMATION LOADING -------------------------- */
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #2e2e2e;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
 }
