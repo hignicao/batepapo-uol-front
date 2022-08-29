@@ -151,7 +151,7 @@ function statusErrorLogin(erro) {
 function changeRecipient(user) {
 	let recipientType = user.querySelector(".recipient-type");
 	let recipient = document.querySelector(".private-text");
-	
+
 	if (recipientType.innerHTML === "Todos") {
 		recipient.classList.add("hidden");
 		recipient.querySelector(".name-to").innerHTML = "Todos";
@@ -161,14 +161,13 @@ function changeRecipient(user) {
 		recipient.querySelector(".name-to").innerHTML = recipientType.innerHTML;
 		messageRecipient = recipientType.innerHTML;
 	}
-	
+
 	changeCheck(user);
 }
 
 function changeVisibility(message, type) {
-	
 	let recipient = document.querySelector(".private-text");
-	
+
 	if (type === "private") {
 		messageVisibility = "private_message";
 		recipient.querySelector(".reserved-type-message").innerHTML = "(reservadamente)";
@@ -176,18 +175,18 @@ function changeVisibility(message, type) {
 		messageVisibility = "message";
 		recipient.querySelector(".reserved-type-message").innerHTML = "";
 	}
-	
+
 	changeCheck(message);
 }
 
 function changeCheck(element) {
 	let check = element.parentElement.querySelector(".check");
-	
+
 	if (check !== null) {
 		check.classList.add("hidden");
 		check.classList.remove("check");
 	}
-	
+
 	let uncheck = element.querySelector(".hidden");
 	uncheck.classList.remove("hidden");
 	uncheck.classList.add("check");

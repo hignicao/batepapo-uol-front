@@ -196,7 +196,7 @@ main .menu {
 }
 
 .ion-icon-p p {
-  max-width: 168px;
+  max-width: 148px;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
@@ -239,7 +239,7 @@ footer .footer-container {
 
 .footer-container textarea{
   font-family: 'Roboto', sans-serif;
-  height: 26px;
+  height: 24px;
   width: 100%;
   border: none;
   font-style: italic;
