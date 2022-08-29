@@ -117,6 +117,7 @@ main .login-screen {
   padding: 12px 8px;
   min-height: 40px;
   background-color: #FFFFFF;
+  word-wrap: break-word;
 }
 
 .message span {
@@ -173,6 +174,8 @@ main .menu {
   flex-direction: column;
   gap: 25px;
   padding: 20px;
+  overflow-y: auto;
+  word-break: break-word;
 }
 
 .menu-container .title-menu {
@@ -193,6 +196,7 @@ main .menu {
 }
 
 .ion-icon-p p {
+  max-width: 168px;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
