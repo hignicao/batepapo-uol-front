@@ -4,9 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
+
 		<title>Bate Papo UOL</title>
-		<link rel="shortcut icon" href="src/images/uol-logo.png" type="image/x-icon">
+		<link rel="shortcut icon" href="src/images/uol-logo.png" type="image/x-icon" />
 		<link rel="stylesheet" href="src/css/reset.css" />
 		<link rel="stylesheet" href="src/css/style.css" />
 
@@ -31,23 +31,24 @@
 						<button onclick="addUserName()">Entrar</button>
 					</div>
 					<div class="name-enter-loading hidden">
-						<div class="lds-ripple"><div></div><div></div></div>
+						<div class="lds-ripple">
+							<div></div>
+							<div></div>
+						</div>
 						<p>Entrando...</p>
 					</div>
 				</div>
 			</div>
 
 			<ul class="messages">
-				
+
 			</ul>
 
-			<div class="menu hidden">
-				<div onclick="activateMenu()" class="menu-background"></div>
-				<div class="menu-container">
+			<div class="menu">
+				<div onclick="activateMenu()" class="menu-background hidden"></div>
+				<div class="menu-container menu-hidden">
 					<p class="title-menu">Escolha um contato para enviar mensagem:</p>
-					<div class="choose-contact">
-						
-					</div>
+					<div class="choose-contact"></div>
 					<p class="title-menu">Escolha a visibilidade:</p>
 					<div class="choose-visibility">
 						<div data-identifier="visibility" onclick="changeVisibility(this, 'public')" class="visibility">
@@ -72,7 +73,7 @@
 		<footer>
 			<div class="footer-container">
 				<div class="input-description">
-					<textarea id="my-message" style="overflow:hidden; white-space: pre-wrap; word-break: break-word;" placeholder="Escreva aqui..."></textarea>
+					<textarea id="my-message" style="overflow: hidden; white-space: pre-wrap; word-break: break-word" placeholder="Escreva aqui..."></textarea>
 					<p class="private-text hidden">Enviando para <span class="name-to">Nome da pessoa</span> <span class="reserved-type-message"></span></p>
 				</div>
 				<ion-icon id="myBtn" onclick="sendMessage()" name="paper-plane-outline"></ion-icon>

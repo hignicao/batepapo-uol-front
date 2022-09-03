@@ -3,7 +3,8 @@ let users = [];
 let myname = "";
 let messageRecipient = "Todos";
 let messageVisibility = "message";
-let input = document.getElementById("my-message");
+const input = document.getElementById("my-message");
+const url = "https://mock-api.driven.com.br/api/v6/uol/"
 
 input.addEventListener("keypress", function (event) {
 	if (event.key === "Enter") {
@@ -21,7 +22,7 @@ function addUserName() {
 		name: myname,
 	};
 
-	const promisse = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", newUserName);
+	const promisse = axios.post(`${url}participants`, newUserName);
 	promisse.then(getParticipants);
 	promisse.then(getMessages);
 	promisse.then(loginScreen);
@@ -32,7 +33,7 @@ function addUserName() {
 }
 
 function getParticipants() {
-	const promisse = axios.get("https://mock-api.driven.com.br/api/v6/uol/participants");
+	const promisse = axios.get(`${url}participants`);
 	promisse.then(participantsArrived);
 }
 
@@ -55,7 +56,7 @@ function renderUsers() {
 
 	for (let i = 0; i < users.length; i++) {
 		user.innerHTML += `
-		<div data-identifier="participant" onclick="changeRecipient(this)" class="contacts">
+		<div data-identifier="participant" onclick="changeRecipient(this, '${users[i].name}')" class="contacts">
 			<div class="ion-icon-p">
 				<ion-icon name="person-circle"></ion-icon>
 				<p class="recipient-type" >${users[i].name}</p>
@@ -71,7 +72,7 @@ function statusUser() {
 		name: myname,
 	};
 
-	axios.post("https://mock-api.driven.com.br/api/v6/uol/status", userNameActive);
+	axios.post(`${url}status`, userNameActive);
 }
 
 function sendMessage() {
@@ -84,7 +85,7 @@ function sendMessage() {
 		type: messageVisibility,
 	};
 
-	const promisse = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", newMessage);
+	const promisse = axios.post(`${url}messages`, newMessage);
 	promisse.then(getMessages);
 	promisse.catch(reloadPage);
 
@@ -92,7 +93,7 @@ function sendMessage() {
 }
 
 function getMessages() {
-	const promisse = axios.get("https://mock-api.driven.com.br/api/v6/uol/messages");
+	const promisse = axios.get(`${url}messages`);
 	promisse.then(messagesArrived);
 }
 
@@ -148,18 +149,17 @@ function statusErrorLogin(erro) {
 	document.querySelector(".name-enter-loading").classList.toggle("hidden");
 }
 
-function changeRecipient(user) {
-	let recipientType = user.querySelector(".recipient-type");
+function changeRecipient(user, username) {
 	let recipient = document.querySelector(".private-text");
 
-	if (recipientType.innerHTML === "Todos") {
+	if (username === "Todos") {
 		recipient.classList.add("hidden");
 		recipient.querySelector(".name-to").innerHTML = "Todos";
 		messageRecipient = "Todos";
 	} else {
 		recipient.classList.remove("hidden");
-		recipient.querySelector(".name-to").innerHTML = recipientType.innerHTML;
-		messageRecipient = recipientType.innerHTML;
+		recipient.querySelector(".name-to").innerHTML = username;
+		messageRecipient = username;
 	}
 
 	changeCheck(user);
@@ -193,7 +193,8 @@ function changeCheck(element) {
 }
 
 function activateMenu() {
-	document.querySelector(".menu").classList.toggle("hidden");
+	document.querySelector(".menu-background").classList.toggle("hidden");
+	document.querySelector(".menu-container").classList.toggle("menu-hidden");
 }
 
 function loginScreen() {
